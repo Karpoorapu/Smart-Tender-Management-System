@@ -1,7 +1,8 @@
 <html>
 <head>
+<title>viewtenders</title>
 </head>
-<body bgcolor="RosyBrown">
+<body bgcolor="Lavender">
     <font face="Times New Roman">
         <center>
         <table border="1" cellspacing="2" cellpadding="5" width="100%">
@@ -19,30 +20,24 @@
         </table>
         </center>
     </font>
-<br><br><br><br><br><br><br>
 <center>
-<font face="Times New Roman" size="4" ><h2><u><b>CREATE BID</b></u></h2></font>
-<br><br><br>
-<form action="/createbidform" method="post">
-<table>
+<h1 ALIGN="center"><u>VIEW TENDERS</u></h1>
+<table border="1">
 <tr>
-<td>Tender Id:</td>
-<td><input type="number" name="tenderid"></td>
+   <th>Tender Id</th>
+   <th>Tender Owner</th>
+   <th>Tender Information</th>
 </tr>
-<tr>
-<td>Bid Amount:</td>
-<td><input type="text" name="bidamount"></td>
-</tr>
-<tr>
-<td>Bid Email:</td>
-<td><input type="text" name="bidemail"></td>
-</tr>
-<tr>
-<td><input type="submit" value="SUBMIT"></td>
-</tr>
+{%for i in range(0,l)%}
+   <tr>
+      <td>{{dashboard_data[i][0]}}</td>
+      <td>{{dashboard_data[i][1]}}</td>
+      <td>{{dashboard_data[i][2]}}</td>
+      
+   </tr>
+{%endfor%}
+
 </table>
-</form>
-<span style="color:green">{{res}}</span>
 </center>
 </body>
 </html>
